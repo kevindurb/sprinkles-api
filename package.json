@@ -5,6 +5,9 @@
   "repository": "git@github.com:kevindurb/sprinkles-api.git",
   "author": "Kevin Durbin <kevindurb@gmail.com>",
   "license": "MIT",
+  "engines": {
+    "node": "8"
+  },
   "dependencies": {
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
