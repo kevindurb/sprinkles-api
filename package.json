@@ -1,0 +1,8 @@
+{
+  "name": "sprinkles-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:kevindurb/sprinkles-api.git",
+  "author": "Kevin Durbin <kevindurb@gmail.com>",
+  "license": "MIT"
+}
