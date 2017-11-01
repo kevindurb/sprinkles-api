@@ -11,16 +11,16 @@ module.exports = {
   },
   createUser(data) {
     return bcrypt.hash(data.password, 10)
-    .then((hash) => (
-      (new User(
-        R.merge(
-          R.omit(
-            ['password'],
-            data
-          ),
-          R.objOf('hash', hash)
-        )
-      )).save()
-    ));
+      .then((hash) => (
+        (new User(
+          R.merge(
+            R.omit(
+              ['password'],
+              data
+            ),
+            R.objOf('hash', hash)
+          )
+        )).save()
+      ));
   }
 };
