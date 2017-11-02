@@ -11,7 +11,7 @@ module.exports = {
       return;
     }
     services.getUserById(userId)
-    .then(user => res.send(userPresenter(user)));
+      .then(user => res.send(userPresenter(user)));
   },
   login(req, res) {
     const username = req.body.username;
@@ -23,23 +23,23 @@ module.exports = {
     }
 
     services.getUserByUsername(username)
-    .then((user) => {
-      if (!user) {
-        return false;
-      }
+      .then((user) => {
+        if (!user) {
+          return false;
+        }
 
-      return bcrypt.compare(password, user.hash)
-      .then((result) => result ? user : null);
-    })
-    .then((result) => {
-      if (!result) {
-        res.status(400);
-        res.end();
-        return;
-      }
+        return bcrypt.compare(password, user.hash)
+          .then((result) => result ? user : null);
+      })
+      .then((result) => {
+        if (!result) {
+          res.status(400);
+          res.end();
+          return;
+        }
 
-      req.session.userId = result.id;
-      res.send(userPresenter(result));
-    });
+        req.session.userId = result.id;
+        res.send(userPresenter(result));
+      });
   },
 };
